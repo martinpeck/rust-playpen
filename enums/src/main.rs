@@ -17,6 +17,11 @@ fn main() {
     let value = value_in_cents(my_coin);
     let value = value_in_cents(my_other_coin);
     
+    let five = Some(5);
+    let six = plus_one(five);
+    let none = plus_one(None);
+    
+    
 }
 
 #[derive(Debug)]
@@ -47,3 +52,11 @@ fn value_in_cents(coin: Coin) -> u8 {
         },
     }
 }
+
+fn plus_one(x: Option<i32>) -> Option<i32> {
+    match x {
+        None => None,
+        Some(i) => Some(i + 1),
+    }
+}
+
